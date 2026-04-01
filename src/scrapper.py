@@ -16,22 +16,21 @@ def get_product_data(url):
 
     try:
         response = requests.get(url, headers=headers)
-        print(f"Code de réponse : {response.status_code}") # AJOUTE CETTE LIGNE
+        print(f"Code de réponse : {response.status_code}") 
 
         if response.status_code != 200:
             print("Le site nous bloque ou l'URL est mauvaise.")
-        soup = BeautifulSoup(response.text, "html.parser") # S majuscule
+        soup = BeautifulSoup(response.text, "html.parser")
 
         price_tag = soup.find('p', class_='price')
         title_tag = soup.find('h1', class_='title')
-        # Juste avant le if price_tag:
+
         print(f"Prix trouvé ? {price_tag is not None}")
         print(f"Titre trouvé ? {title_tag is not None}")
         if price_tag and title_tag:
             raw_price = price_tag.get_text()
             product_name = title_tag.get_text().strip()
             
-            # Correction de l'orthographe ici
             cleaned_price = clean_price(raw_price) 
 
             return {
