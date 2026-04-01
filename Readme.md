@@ -33,22 +33,22 @@ smart-shopper/
 1. Préparation de l'environnement
 Clonez le dépôt et créez votre environnement virtuel :
 
-Bash
+```Bash
 git clone [https://github.com/votre-pseudo/smart-shopper.git](https://github.com/votre-pseudo/smart-shopper.git)
 cd smart-shopper
 python3 -m venv venv
 source venv/bin/activate
 2. Installation des dépendances
-Bash
+```Bash
 pip install -r requirements.txt
 3. Exécution
 Pour scraper un produit et l'enregistrer en base de données :
 
-Bash
+```Bash
 python3 main.py
 Pour visualiser l'historique des prix enregistrés :
 
-Bash
+```Bash
 python3 check_db.py
 📈 Évolutions à venir
 [ ] Automatisation : Configuration d'une tâche Cron pour un suivi quotidien.
